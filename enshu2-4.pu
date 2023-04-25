@@ -1,0 +1,10 @@
+@startuml 2-4
+left to right direction
+actor 利用者
+rectangle ホテル宿泊予約 {
+usecase (<u>予約する</u>\n各頂点\nキャンペーン期間中) as input
+usecase キャンペーン価格
+}
+利用者 --> input
+キャンペーン価格 .> input : <<extend>>
+@enduml

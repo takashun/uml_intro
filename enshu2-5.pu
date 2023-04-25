@@ -1,0 +1,9 @@
+@startuml 2-5
+left to right direction
+actor 販売部
+rectangle 販売管理システム{
+usecase 注文商品の確認
+usecase 商品の出荷状況を登録
+}
+販売部 --> 注文商品の確認
+販売部 --> 商品の出荷状況を登録
