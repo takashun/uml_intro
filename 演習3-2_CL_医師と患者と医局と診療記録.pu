@@ -1,7 +1,31 @@
 @startuml 演習3-2_CL_医師と患者と医局と診療記録
-class 医師 {}
-class 患者 {}
-class 診察記録 {}
-class 医局 {}
-医師 "*"-"1" 医局
-医師 "1"-down-"*" 患者:担当医
+class 医師 {
+  + ID: int
+  + 名前: string
+  - 所属医局: 医局
+  {method} + 診察(患者)
+}
+
+class 患者 {
+  + ID: int
+  + 名前: string
+  - 担当医: 医師
+  - 診察記録: 診察記録
+}
+
+class 医局 {
+  + 名称: string
+}
+
+class 診察記録 {
+  + 日時: datetime
+  + 症状: string
+  + 診断結果: string
+}
+
+医師 -down-> 患者: 診察
+患者 --> 医師: 担当医
+患者 -ri-> 診察記録: 診察記録
+医師 -ri-> 医局: 所属医局
+@enduml
+
