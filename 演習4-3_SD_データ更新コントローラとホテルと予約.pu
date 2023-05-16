@@ -1,0 +1,12 @@
+@startuml 演習4-3_SD_データ更新コントローラとホテルと予約.pu
+hide footbox
+skinparam style strictuml
+participant ":データ更新コントローラ" as controller
+participant ":ホテル" as hotel
+
+activate controller
+controller -> hotel:予約操作()
+activate hotel
+hotel -> hotel:予約作成
+activate hotel
+@enduml

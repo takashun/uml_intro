@@ -1,0 +1,22 @@
+@startuml 演習4-5_SD_商品情報検索.pu
+hide footbox
+skinparam style strictuml
+actor ":会員" as member
+participant ":商品検索画面" as boundary <<boundary>>
+participant ":商品検索コントローラ" as control <<control>>
+participant ":商品" as entity <<entity>>
+participant ":商品カテゴリ" as entity2 <<entity>>
+activate member
+member -> boundary:商品検索(商品番号)
+activate boundary
+boundary -> control:商品検索(商品番号)
+activate control
+create entity
+control -> entity:<<create>> 生成()
+alt 商品カテゴリ数
+create entity2
+control -> entity2:<<create>> 生成()
+
+end alt
+control -> boundary:商品情報表示
+@enduml

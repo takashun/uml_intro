@@ -1,0 +1,21 @@
+@startuml 演習3-4_オブジェクト図.pu
+object "<u>車情報: 車</u>" as car{
+
+}
+object "<u>タイヤ: タイヤ1</u>" as t1{
+
+}
+object "<u>タイヤ: タイヤ2</u>" as t2{
+
+}
+object "<u>タイヤ: タイヤ3</u>" as t3{
+
+}
+object "<u>タイヤ: タイヤ4</u>" as t4{
+
+}
+t1 -- car
+t2 -- car
+car -- t3
+car -- t4
+@enduml

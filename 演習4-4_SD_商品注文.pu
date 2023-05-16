@@ -1,0 +1,24 @@
+@startuml 演習4-4_SD_商品注文.pu
+hide footbox
+skinparam style strictuml
+actor ":受注係" as user
+participant ":注文登録画面" as boundary <<boundary>>
+participant ":商品" as entity <<entity>>
+participant ":注文" as entity2 <<entity>>
+activate user
+    user -> boundary:商品情報確認()
+    activate boundary
+    activate entity
+    boundary -> entity:商品情報確認()
+    entity -->> boundary:商品情報確認()
+    deactivate entity
+    boundary -> boundary:商品情報表示(商品情報)
+    activate boundary
+    deactivate
+    deactivate boundary
+    user -> boundary:商品登録(注文情報)
+    activate boundary
+create entity2
+boundary -> entity2:商品登録(注文情報)<<create>>
+activate entity2
+@enduml

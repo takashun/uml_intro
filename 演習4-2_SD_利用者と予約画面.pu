@@ -1,0 +1,13 @@
+@startuml 演習4-2_SD_利用者と予約画面.pu
+hide footbox
+skinparam style strictuml
+
+actor ":利用者" as user <<control>>
+participant ":予約画面" as login
+
+activate user
+user ->> login: ログインする()
+activate login
+login -> login: 認証する()
+activate login
+@enduml
