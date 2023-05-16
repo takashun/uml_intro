@@ -1,0 +1,18 @@
+@startuml 演習4-6_SD_Web画像検索
+hide footbox
+skinparam style strictuml
+actor ":ユーザ" as user
+participant ":ブラウザ" as b <<boundary>>
+participant ":WEBサーバー" as w <<control>>
+participant ":画像サーバー" as g <<entity>>
+activate user
+user -> b:画像のリンク
+activate b
+b -> w:画像検索(画像のファイル名)
+activate w
+w -> g:画像検索(画像のファイル名)
+activate g
+g -> g:画像検索(画像のファイル名)
+g --> w:閲覧可能状態(画像ファイル)
+w --> b:画像ファイルの再生(画像ファイル)
+b -> user:画像閲覧
