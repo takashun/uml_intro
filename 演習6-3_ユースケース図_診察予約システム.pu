@@ -1,0 +1,17 @@
+@startuml 演習6-3_ユースケース図_診察予約システム.pu
+hide footbox
+left to right direction
+actor ユーザー
+actor 病院
+rectangle 診療予約システム{
+usecase メニュー
+usecase 予約と確認
+usecase あなたの順番
+usecase 今の順番
+} 
+ユーザー -- メニュー
+ユーザー -- 予約と確認
+ユーザー -- あなたの順番
+ユーザー -- 今の順番
+今の順番 -- 病院
+@enduml

@@ -1,0 +1,17 @@
+@startuml 演習6-4-3_シーケンス図_自動販売機.pu
+hide footbox
+actor 客 as user
+participant 料金装置 as kane
+participant ボタン as botan
+participant ベンダー装置 as benda
+activate user
+user --> kane :お金を入れる
+activate kane
+kane --> botan :ボタンを押す
+deactivate
+activate botan
+botan --> benda :ドリンクを出す
+deactivate
+activate benda
+benda --> user :ドリンクが出てくる
+@enduml

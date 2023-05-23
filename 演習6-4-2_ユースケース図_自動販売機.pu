@@ -1,0 +1,14 @@
+@startuml 演習6-4-2_ユースケース図_自動販売機.pu
+hide footbox
+left to right direction
+actor 客
+actor ベンダー
+rectangle 自動販売機{
+    usecase お金を入れる
+    usecase お金を回収する
+    usecase ドリンクを補充する
+}
+客 --> お金を入れる 
+お金を回収する <-- ベンダー
+ドリンクを補充する <-- ベンダー
+@enduml
