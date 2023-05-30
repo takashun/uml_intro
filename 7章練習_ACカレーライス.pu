@@ -1,0 +1,15 @@
+@startuml カレーライス
+start
+:米を研ぐ;
+fork
+:ご飯を炊く;
+fork again
+:具材を切る;
+:具材を炒める;
+:水を入れる;
+:煮込む;
+:ルーを入れる;
+end fork
+:盛り付ける;
+stop 
+@enduml
