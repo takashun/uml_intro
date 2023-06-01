@@ -1,3 +1,10 @@
 @startuml 演習6-5-3_ステートマシン図_ライントレーサー.pu
-state 
+state 電源SWオフ
+state 電源SWオン{
+state 右旋回
+state 左旋回
+}
+[*] --> 電源SWオン
+電源SWオン --> 電源SWオフ
+電源SWオフ --> [*]
 @enduml
