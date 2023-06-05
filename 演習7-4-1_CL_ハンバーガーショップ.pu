@@ -1,0 +1,65 @@
+@startuml 演習7-4-1_CL_ハンバーガーショップ.pu
+hide circle
+class "注文" as a{
+    合計
+}
+
+class "注文明細" as b{
+    数量
+    小計
+}
+
+class "割引クーポン" as c{
+    値引き額
+    期限
+}
+
+class "商品" as d{
+    名称
+    単価
+}
+
+class "カップ" as e{
+    サイズ
+}
+
+class "ドリンク" as f{
+    種別
+}
+
+class "フード" as g{}
+
+class "ポテト" as h{}
+
+class "材料" as i{}
+
+class "レシピ" as j{
+    種別
+}
+
+class "ハンバーガー" as k{
+    サイズ
+}
+
+class 肉{}
+
+class パン{}
+
+class 野菜{}
+
+class チーズ{}
+a "1..*" o-ri- b
+b "0..*" -ri- "0..1" c 
+b "0..*" -down- "1" d
+e "1..3" -ri- "0..*" f
+f -ri-|> d
+g -up-|> d
+g "1" -ri- "1" h
+j -up-|> g
+j "1..*" o-le- "1..*" i
+k -up-|> g
+i <|-- パン
+i <|-- 肉
+i <|-- 野菜
+i <|-- チーズ
+@enduml

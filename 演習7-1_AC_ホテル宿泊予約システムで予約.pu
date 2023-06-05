@@ -1,0 +1,9 @@
+@startuml 演習7-1_AC_ホテル宿泊予約システムで予約.pu
+start
+repeat
+:ユーザ名を入力する;
+:パスワードを入力する;
+repeat while (認証が成功) -> [No]
+    :予約を行う;
+stop
+@enduml
