@@ -27,11 +27,17 @@ class "ドリンク" as f{
     種別
 }
 
-class "フード" as g{}
+class "フード" as g{
 
-class "ポテト" as h{}
+}
 
-class "材料" as i{}
+class "ポテト" as h{
+
+}
+
+class "材料" as i{
+    
+}
 
 class "レシピ" as j{
     種別
